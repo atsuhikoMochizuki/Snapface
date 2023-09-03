@@ -1,28 +1,30 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FaceSnap } from '../models/face-snap-model';
 import { FaceSnapsService } from '../services/face-snaps.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 const TEXT_BUTTON_FOR_SNAP_EQUALS_0: string = "📸 Snap la photo!";
 const TEXT_BUTTON_FOR_SNAP_EQUALS_1: string = 'Oops, unSnap!';
 
-// Ce composant permet d'afficher un FaceSnap : un photo partagée et quelques informations la concernant
 @Component({
-  selector: 'app-face-snap',
-  templateUrl: './face-snap.component.html',
-  styleUrls: ['./face-snap.component.scss']
+  selector: 'app-single-face-snap',
+  templateUrl: './single-face-snap.component.html',
+  styleUrls: ['./single-face-snap.component.scss']
 })
-export class FaceSnapComponent implements OnInit {
-  @Input() faceSnap!: FaceSnap;
+export class SingleFaceSnapComponent {
+  faceSnap!: FaceSnap;
 
   buttonText!: string;
 
   constructor(private faceSnapsService: FaceSnapsService,
-    private router: Router) {}
+    private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.buttonText = TEXT_BUTTON_FOR_SNAP_EQUALS_0;
-    this.faceSnap.snaps = 0;
+    /* this.faceSnap.snaps = 0; */
+    const snapId = +this.route.snapshot.params['id'];
+    console.log(snapId);
+    this.faceSnap = this.faceSnapsService.getFaceSnapById(snapId);
   }
 
   onSnap() {
@@ -35,7 +37,4 @@ export class FaceSnapComponent implements OnInit {
     }
 
   }
-  onViewFaceSnap() {
-    this.router.navigateByUrl(`facesnaps/${this.faceSnap.id}`);
-}
 }

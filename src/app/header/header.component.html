@@ -1,0 +1,13 @@
+<!-- Le Header reste visible peut-importe la route 
+dans laquelle on se trouve -->
+<header>
+    <h1>snapface</h1>
+    <nav>
+        <!-- le paramètre passée à routerLinkActiveOption  permet
+        de préciser que c'est seulement la route sélectionnée qui
+        est active (désactive les enfants) -->
+        <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        <a routerLink="/facesnaps" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">FaceSnaps</a>
+        
+    </nav>
+</header>

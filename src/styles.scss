@@ -1,3 +1,20 @@
 * {
-    font-family: 'Gloria Hallelujah', cursive;
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+button {
+  background-color: transparent;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  border-style:groove;
+  box-shadow: lightray 3px 3px 7 px;
+  margin-right: 20px;
+  outline: none;
+  font-size: 14px;
+  font-weight: 500;
+
+  &:active {
+    translate: 1px 1px;
+    box-shadow: lightgray 0 0 5pxs;
   }
+}

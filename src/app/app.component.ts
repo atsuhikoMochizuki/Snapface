@@ -7,15 +7,5 @@ import { FaceSnap } from './models/face-snap-model';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-  public mySnap!: FaceSnap ;
-
-  ngOnInit(): void {
-    this.mySnap = new FaceSnap(
-      "Gertrude AB",
-      "c'est ma meilleur amie",
-      new Date(2023, 0o2, 12), 0, "https://lorem.picsum/500/400"
-    );
-  }
-
+export class AppComponent {
 }

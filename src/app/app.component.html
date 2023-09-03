@@ -1,3 +1,8 @@
-<app-face-snap [faceSnap]="mySnap"></app-face-snap>
-
-
+<app-header></app-header>
+<!-- Au lieu d'afficher ici le <face-snap-list> de
+    manière statique, on va se servir du routler-outlet 
+    Ce sera ainsi le routeur qui décidera quel component 
+    doit être affiché, et AppComponent qui décidera à 
+    quel niveau ce component sera ajouté. 
+-->
+    <router-outlet></router-outlet>
