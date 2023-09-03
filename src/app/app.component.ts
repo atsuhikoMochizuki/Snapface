@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.mySnap = new FaceSnap(
-      "Gertrude",
+      "Gertrude A",
       "c'est ma meilleur amie",
       new Date(2023, 0o2, 12), 0, "https://lorem.picsum/500/400"
     );
